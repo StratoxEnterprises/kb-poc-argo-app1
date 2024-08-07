@@ -1,0 +1,7 @@
+name: nginx
+version: 0.0.0
+
+dependencies:
+- name: nginx
+  version: "18.1.7"
+  repository: "oci://registry-1.docker.io/bitnamicharts"
