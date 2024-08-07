@@ -26,6 +26,7 @@ spec:
       destination:
         name: cluster-01
         namespace: app1
+      project: "team-01"
       syncPolicy:
         automated:
           prune: true
