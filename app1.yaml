@@ -3,26 +3,22 @@ kind: Application
 metadata:
   name: app1
   namespace: tenant-a
-  labels:
-    app.kubernetes.io/part-of: app1
-    app.kubernetes.io/app-name: app1
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: tenant-a
-    name: in-cluster
   project: default
   source:
-    path: .
+    directory:
+      include:  'appset.yaml'
     repoURL: git@github.com:Romanecek/kb-poc-argo-app1.git
     targetRevision: main
-    helm:
-      valueFiles:
-      - values.yaml
+    path: .
+  destination:
+    name: in-cluster
+    namespace: tenant-a
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
     syncOptions:
     - CreateNamespace=true
+
