@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app1
+  name: app1-nginx
   namespace: tenant-a
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+#  project: default
   source:
     repoURL: git@github.com:Romanecek/kb-poc-argo-app1.git
     targetRevision: main
-    path: .
+    path: nginx
     helm:
       valueFiles:
-      - values.yaml
+      - ../values.yaml
   destination:
-    name: in-cluster
-    namespace: tenant-a
+    name: cluster-01
+    namespace: app1
 #  project: 'team-01'
   project: default
   syncPolicy:
