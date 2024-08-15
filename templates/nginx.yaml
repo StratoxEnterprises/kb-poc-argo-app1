@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app1-nginx
-  namespace: tenant-a
+  namespace: tenant-a-team-01
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -17,8 +17,8 @@ spec:
   destination:
     name: cluster-01
     namespace: app1
-#  project: 'team-01'
-  project: default
+  project: 'team-01'
+#  project: default
   syncPolicy:
     automated:
       prune: true

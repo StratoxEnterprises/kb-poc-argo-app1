@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app1
-  namespace: tenant-a
+  namespace: tenant-a-team-01
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: 'team-01'
   source:
     repoURL: git@github.com:Romanecek/kb-poc-argo-app1.git
     targetRevision: main
@@ -16,9 +16,9 @@ spec:
       - values.yaml
   destination:
     name: in-cluster
-    namespace: tenant-a
-#  project: 'team-01'
-  project: default
+    namespace: tenant-a-team-01
+  project: 'team-01'
+# project: default
   syncPolicy:
     automated:
       prune: true
