@@ -8,7 +8,7 @@ metadata:
 spec:
 #  project: default
   source:
-    repoURL: git@github.com:Romanecek/kb-poc-argo-app1.git
+    repoURL: git@github.com:StratoxEnterprises/kb-poc-argo-app1.git
     targetRevision: main
     path: nginx
     helm:
