@@ -6,7 +6,6 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: 'team-01'
   source:
     repoURL: git@github.com:Romanecek/kb-poc-argo-app1.git
     targetRevision: main
@@ -17,8 +16,8 @@ spec:
   destination:
     name: in-cluster
     namespace: tenant-a-team-01
-  project: 'team-01'
-# project: default
+  project: team-01
+#  project: default
   syncPolicy:
     automated:
       prune: true
