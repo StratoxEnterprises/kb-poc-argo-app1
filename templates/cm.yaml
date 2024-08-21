@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: poc-cm
+  namespace: tenant-a-team-01
+data:
+  foo: "bar"
