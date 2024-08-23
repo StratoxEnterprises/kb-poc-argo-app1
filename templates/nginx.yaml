@@ -15,7 +15,7 @@ spec:
       valueFiles:
       - ../values.yaml
   destination:
-    name: cluster-01
+    name: {{ .Values.targetCluster }}
     namespace: app1
   project: 'team-01'
 #  project: default

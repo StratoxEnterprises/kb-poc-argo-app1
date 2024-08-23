@@ -1,3 +1,5 @@
+targetCluster: cluster-01
+
 nginx:
   service:
     type: ClusterIP
