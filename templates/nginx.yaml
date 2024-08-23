@@ -17,7 +17,7 @@ spec:
   destination:
     name: cluster-01
     namespace: app1
-  project: 'team-02'
+  project: 'team-01'
 #  project: default
   syncPolicy:
     automated:
